@@ -10,7 +10,7 @@ def run(playwright: Playwright) -> None:
     page.goto("https://desertdiamondhvac.com/vote-for-your-local-school/")
     page.locator(".totalpoll-question-choices-item-label").first.click()
     page.get_by_role("button", name="Vote").click()
-    time.sleep(2.5)
+    time.sleep(1)
 
     # ---------------------
     context.close()
@@ -27,4 +27,4 @@ def runXTimes(amount, threads):
         thread = threading.Thread(target=runNOW, args=(perThread,))
         thread.start()
 
-runXTimes(3000, 3)
+runXTimes(1000000, 5)
